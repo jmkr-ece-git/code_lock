@@ -1,0 +1,13 @@
+{
+    "meta": {
+        "flow": "VHDLClassic"
+    },
+"DESIGN_NAME": "tt_um_example",
+"VHDL_FILES": ["dir::counter.vhd","dir::tt_um_example.vhd" ],
+"CLOCK_PORT": "clk",
+"CLOCK_PERIOD": 20,
+"FP_SIZING": "absolute",
+"DIE_AREA": [0, 0, 161.00, 111.520],
+"FP_DEF_TEMPLATE":"dir::tt_block_1x1_pg.def",
+"FP_CORE_UTIL": 40
+}
