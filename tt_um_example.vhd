@@ -29,7 +29,8 @@ BEGIN
       reset => rst_n,
       enter => ui_in(0),
       code => ui_in(4 downto 1),
-      lock => uo_out(0)
+      lock => uo_out(0),
+      debug => uo_out(3 downto 1)
     );
 
   -- Tie-offs for unused IO outputs and output enables

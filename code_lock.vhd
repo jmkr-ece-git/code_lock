@@ -7,7 +7,9 @@ entity code_lock is
 		reset : in std_logic;
 		enter : in std_logic;
 		code : in std_logic_vector (3 downto 0);
-		lock : out std_logic
+		lock : out std_logic;
+		debug : out std_logic_vector (2 downto 0) -- For debugging purposes, can be removed in final design	
+
 		);
 end code_lock;
 
@@ -30,7 +32,9 @@ cl_fsm: entity work.code_lock_fsm port map
 	code => code,
 	lock => lock,
 	err_event => err_event,
-	failed => failed
+	failed => failed,
+	indicators => debug
+
 );
 
 wc: entity work.wrong_code port map
