@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY tt_um_example IS
+ENTITY tt_um_jmkr_ece_git_codelock IS
   PORT (
     ui_in : IN STD_LOGIC_VECTOR(7 DOWNTO 0); -- Dedicated inputs
     uo_out : OUT STD_LOGIC_VECTOR(7 DOWNTO 0); -- Dedicated outputs
@@ -15,19 +15,21 @@ ENTITY tt_um_example IS
     clk : IN STD_LOGIC; -- clock (unused here)
     rst_n : IN STD_LOGIC -- active-low reset (unused here)
   );
-END ENTITY tt_um_example;
+END ENTITY tt_um_jmkr_ece_git_codelock;
 
-ARCHITECTURE rtl OF tt_um_example IS
+ARCHITECTURE rtl OF tt_um_jmkr_ece_git_codelock IS
   -- Local 'keep' signal to consume otherwise unused inputs
   SIGNAL unused_keep : STD_LOGIC;
 BEGIN
 
-  -- Instantiate the counter directly
-  counter_inst : ENTITY work.counter
-    PORT MAP(
-      clk_i => clk, -- Clock input to the counter
-      rst_ni => rst_n, -- Active-low reset input to the counter
-      count_o => uo_out -- 8-bit counter output connected to dedicated outputs
+  -- Instantiate the code_lock entity
+  code_lock_inst : entity work.code_lock
+    port map (
+      clk => clk,
+      reset => rst_n,
+      enter => ui_in(0),
+      code => ui_in(4 downto 1),
+      lock => uo_out(0)
     );
 
   -- Tie-offs for unused IO outputs and output enables

@@ -2,8 +2,13 @@
     "meta": {
         "flow": "VHDLClassic"
     },
-"DESIGN_NAME": "tt_um_example",
-"VHDL_FILES": ["dir::counter.vhd","dir::tt_um_example.vhd" ],
+"DESIGN_NAME": "tt_um_jmkr_ece_git_codelock",
+"VHDL_FILES": ["dir::synch.vhd",
+"dir::wrong_code.vhd",
+"dir::code_lock_fsm.vhd",
+"dir::code_lock.vhd",
+"dir::tt_um_example.vhd"
+ ],
 "CLOCK_PORT": "clk",
 "CLOCK_PERIOD": 20,
 "FP_SIZING": "absolute",
