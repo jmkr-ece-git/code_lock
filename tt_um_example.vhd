@@ -20,6 +20,7 @@ END ENTITY tt_um_jmkr_ece_git_codelock;
 ARCHITECTURE rtl OF tt_um_jmkr_ece_git_codelock IS
   -- Local 'keep' signal to consume otherwise unused inputs
   SIGNAL unused_keep : STD_LOGIC;
+  
 BEGIN
 
   -- Instantiate the code_lock entity
@@ -36,6 +37,8 @@ BEGIN
   -- Tie-offs for unused IO outputs and output enables
   uio_out <= (OTHERS => '0');
   uio_oe <= (OTHERS => '0');
+
+  
 
   -- Consume unused inputs to prevent warnings
   -- (AND-reduction style similar to Verilog &{...})
