@@ -16,7 +16,7 @@ end code_lock_fsm;
 
 architecture three_processes of code_lock_fsm is
 	type state is (idle, Ev_code1, get_code2, Ev_code2, Unlocked, wrong_code, permanently_locked);
-	signal present_state : state := idle; --"ps" refererer til "Present State"
+	signal present_state : state := idle; 
 	signal next_state : state := idle;
 	
 	-- constants for the lock code values
