@@ -13,7 +13,7 @@ END wrong_code;
 
 ARCHITECTURE wrong_code_impl OF wrong_code IS
   TYPE state IS (err_0, err_1, err_2, err_3);
-  SIGNAL present_state, next_state : state; --"ps" refererer til "Present State"
+  SIGNAL present_state, next_state : state; 
 BEGIN
 
   state_reg : PROCESS (clk, reset)
